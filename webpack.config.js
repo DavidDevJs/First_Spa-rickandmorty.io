@@ -26,7 +26,7 @@ module.exports = {
       {
 	inject: true,
 	template: './src/public/index.html',
-	filename: './src/public/index.html',
+	filename: './index.html',
       },
   ),
 ],
