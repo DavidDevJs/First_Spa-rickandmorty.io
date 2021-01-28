@@ -1,3 +1,5 @@
+
+
 const Character = () => {
   const view = `
       <div class="Character__inner">
@@ -18,4 +20,4 @@ const Character = () => {
   return view;
 };
 
-export default Characters;
+export default Character;

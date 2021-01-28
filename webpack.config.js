@@ -2,32 +2,32 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-  entry: './src/index.js',
-  output: {
-    path: path.resolve(__dirname, 'dist'),
-    filename: 'main.js',
-  },
-  resolve: {
-    extensions: ['.js'],
-  },
-  module: {
-    rules: [
+    entry: './src/index.js',
+    output: {
+      path: path.resolve(__dirname, 'dist'),
+      filename: 'main.js',
+    },
+    resolve: {
+      extensions: ['.js'],
+    },
+    module: {
+      rules: [
+	  {
+	    test: /\.js?$/,
+	    exclude: /node_modules/,
+	    use: {
+	      loader: 'babel-loader',
+	    },
+	  },
+    	],
+    },
+    plugins: [
+      new HtmlWebpackPlugin(
       {
-        test: /\.js?$/,
-        exclude: /node_modules/,
-        use: {
-          loader: 'babel-loader',
-        },
+	inject: true,
+	template: './src/public/index.html',
+	filename: './src/public/index.html',
       },
-    ],
-  },
-  plugins: [
-    new HtmlWebpackPlugin([
-      {
-        inject: true,
-        template: './public/index.html',
-        filename: './index.html',
-      },
-    ]),
-  ],
+  ),
+],
 };
