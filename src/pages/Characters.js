@@ -1,6 +1,8 @@
 
 
 const Character = () => {
+
+
   const view = `
       <div class="Character__inner">
          <article class="Character-card">
